@@ -5,22 +5,27 @@ using UnityEngine;
 
 public class ZombieManager : MonoBehaviour
 {
-    public GameObject player;
     public float movementSpeed;
 
-    private NavMeshAgent zombie;
+    private NavMeshAgent zombieNav;
+    private GameObject zombie;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Assigns the player.
+        player = GameObject.FindGameObjectWithTag("Player");
+
         //Assigns the zombie.
-        zombie = GetComponent<NavMeshAgent>();
+        zombieNav = GetComponent<NavMeshAgent>();
+        zombie = gameObject;
 
         //Changes the zombie speed based on a variable.
-        zombie.speed = movementSpeed;
+        zombieNav.speed = movementSpeed;
 
         //Sets a destination for the zombie to go to,in this case, a  player.
-        zombie.SetDestination(player.transform.position);
+        zombieNav.SetDestination(player.transform.position);
     }
 
     // Update is called once per frame
