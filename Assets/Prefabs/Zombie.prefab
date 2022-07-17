@@ -1706,6 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
+  followDistance: 10
 --- !u!1 &3270424646893568455
 GameObject:
   m_ObjectHideFlags: 0
