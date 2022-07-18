@@ -7,6 +7,7 @@ public class ZombieManager : MonoBehaviour
 {
     public float movementSpeed;
     public float followDistance;
+    public LayerMask layerMask;
 
     private NavMeshAgent zombieNav;
     private GameObject zombie;
@@ -35,7 +36,7 @@ public class ZombieManager : MonoBehaviour
     {
         //Detects if the player is within the followDistance, if not, it won't follow the player.
         sightDistance = Vector3.Distance(transform.position, player.transform.position);
-        if (followDistance >= sightDistance)
+        if (followDistance >= sightDistance && CanSeePlayer())
         {
             zombieNav.speed = movementSpeed;
             zombieNav.SetDestination(player.transform.position);
@@ -44,6 +45,22 @@ public class ZombieManager : MonoBehaviour
         else
         {
             zombieNav.speed = 0;
+        }
+    }
+
+    bool CanSeePlayer()
+    {
+        bool hit = Physics.Linecast(zombie.transform.position, player.transform.position, 1 << 7);
+
+        if(!hit)
+        {
+            Debug.Log("hit player");
+            return true;
+        }
+        else
+        {
+            Debug.Log("not hit player");
+            return false;
         }
     }
 }
