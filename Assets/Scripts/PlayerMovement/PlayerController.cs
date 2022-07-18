@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    CharacterController playerController;
-    public Rigidbody rb;
-    public float speed = 1;
-    public Camera cam;
+    public CharacterController playerController;
+    public float speed;
 
-    private void Start()
+    void Start()
     {
-        playerController = GetComponent<CharacterController>();
+        
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        // player movement - forward, backward, left, right
-        float horizontal = Input.GetAxis("Horizontal") * speed;
-        float vertical = Input.GetAxis("Vertical") * speed;
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        //playerController.Move((cam.transform.right * horizontal + cam.transform.forward * vertical) * Time.deltaTime);
-        rb.AddForce((cam.transform.right * horizontal + cam.transform.forward * vertical) * Time.deltaTime);
+        Vector3 move = (transform.right * x) + (transform.forward * z);
+
+        playerController.Move(move * speed * Time.deltaTime);
     }
 }
