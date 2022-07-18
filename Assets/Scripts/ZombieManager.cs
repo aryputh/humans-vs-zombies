@@ -25,6 +25,9 @@ public class ZombieManager : MonoBehaviour
 
         //Sets a destination for the zombie to go to, in this case, a  player.
         zombieNav.SetDestination(player.transform.position);
+
+        //Rotates to face the player.
+        zombie.transform.LookAt(player.transform.position);
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class ZombieManager : MonoBehaviour
         {
             zombieNav.speed = movementSpeed;
             zombieNav.SetDestination(player.transform.position);
+            zombie.transform.LookAt(player.transform.position);
         }
         else
         {
