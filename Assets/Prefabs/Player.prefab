@@ -1992,10 +1992,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5310173
+  m_Radius: 0.7
   m_Height: 3.7406461
   m_Direction: 1
-  m_Center: {x: 0, y: 1.8716799, z: 0.04332429}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!143 &6523321370095362085
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2028,6 +2028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 6523321370095362085}
   speed: 7
+  anim: {fileID: 4851177068152835122}
+  state: 0
 --- !u!1 &4851177068145426420
 GameObject:
   m_ObjectHideFlags: 0
