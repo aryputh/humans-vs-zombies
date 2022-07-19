@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2537315134449878602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0.75}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 12, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,8 +58,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
-  field of view: 60
+  far clip plane: 200
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1992,7 +1992,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.7
+  m_Radius: 1
   m_Height: 3.7406461
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
@@ -2029,6 +2029,7 @@ MonoBehaviour:
   playerController: {fileID: 6523321370095362085}
   speed: 7
   anim: {fileID: 4851177068152835122}
+  healthBar: {fileID: 0}
   state: 0
 --- !u!1 &4851177068145426420
 GameObject:
