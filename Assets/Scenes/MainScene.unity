@@ -1138,6 +1138,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c94f5a17a02bad4ba9129d4c578e0a6, type: 3}
   m_PrefabInstance: {fileID: 349448991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &358291472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3270424646893568125, guid: edf62952baeccec469787708f8782680, type: 3}
+  m_PrefabInstance: {fileID: 763023313322990309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &358291473 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3270424646893280349, guid: edf62952baeccec469787708f8782680, type: 3}
+  m_PrefabInstance: {fileID: 763023313322990309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &358291476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358291472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f3f2f3d387d354b852459731187add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fovAngle: 90
+  fovPoint: {fileID: 358291473}
+  range: 8
+  target: {fileID: 2033011090}
 --- !u!1 &399030762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5101,6 +5127,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98bd2f6a5da134c428a8d6fa9395e9f4, type: 3}
   m_PrefabInstance: {fileID: 2030768444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2033011090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4851177068145386450, guid: 10d8e7bdb60011542bc2d2c4c2351145, type: 3}
+  m_PrefabInstance: {fileID: 7794457104322437333}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2044826411
 PrefabInstance:
