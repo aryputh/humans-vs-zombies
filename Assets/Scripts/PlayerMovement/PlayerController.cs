@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public CharacterController playerController;
     public float speed;
     public Animator anim;
-    public Slider healthBar;
 
     [Tooltip("0 = idle, 1 = run, 2 = jump")]
     public int state;
@@ -16,16 +14,12 @@ public class PlayerController : MonoBehaviour
     private bool isRunning;
     private bool isIdle;
     private bool isJumping;
-    private float health;
 
     void Start()
     {
         isIdle = false;
         isRunning = false;
         isJumping = false;
-
-        health = 100f;
-        healthBar.value = 100f;
     }
 
     void Update()
@@ -104,13 +98,4 @@ public class PlayerController : MonoBehaviour
             state = 0;
         }
     }
-
-	private void OnCollisionStay(Collision collision)
-	{
-		if (collision.gameObject.CompareTag("Zombie"))
-        {
-            health = health - 0.5f;
-            healthBar.value = health;
-		}
-	}
 }

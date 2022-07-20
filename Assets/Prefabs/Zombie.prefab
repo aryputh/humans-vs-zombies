@@ -1611,7 +1611,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.01
+  m_Radius: 0.006595934
   m_Height: 0.038134877
   m_Direction: 2
   m_Center: {x: -0.000000114440915, y: -7.804096e-17, z: 0.01857069}
@@ -1648,8 +1648,11 @@ Transform:
   m_Children:
   - {fileID: 3270424646893280349}
   - {fileID: 3270424646893280299}
+<<<<<<< HEAD
   - {fileID: 4259130412410085428}
   - {fileID: 43255852515880752}
+=======
+>>>>>>> parent of 029b7af (Added a basic detection circle, doesnt work fully yet)
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1682,12 +1685,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 3270424646893568127}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.77
   m_Speed: 3.5
   m_Acceleration: 6
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2131,6 +2134,7 @@ Transform:
   m_Father: {fileID: 3270424646893280257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &3596188310095628972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,3 +2406,5 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+=======
+>>>>>>> parent of 029b7af (Added a basic detection circle, doesnt work fully yet)

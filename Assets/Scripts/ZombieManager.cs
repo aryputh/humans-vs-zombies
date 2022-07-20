@@ -109,7 +109,6 @@ public class ZombieManager : MonoBehaviour
 
         //Detects if the player is within the followDistance, if not, it won't follow the player.
         sightDistance = Vector3.Distance(transform.position, player.transform.position);
-        
         if (followDistance >= sightDistance && CanSeePlayer())
         {
             zombieNav.speed = movementSpeed;
@@ -119,12 +118,6 @@ public class ZombieManager : MonoBehaviour
         }
         else
         {
-            zombieNav.speed = 0;
-            state = 0;
-        }
-
-        if(Vector3.Distance(zombie.transform.position, player.transform.position) <= 3)
-		{
             zombieNav.speed = 0;
             state = 0;
         }
