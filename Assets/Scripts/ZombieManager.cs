@@ -111,6 +111,7 @@ public class ZombieManager : MonoBehaviour
         sightDistance = Vector3.Distance(transform.position, player.transform.position);
         if (followDistance >= sightDistance && CanSeePlayer())
         {
+            Debug.Log("moving towards player");
             zombieNav.speed = movementSpeed;
             zombieNav.SetDestination(player.transform.position);
             zombie.transform.LookAt(player.transform.position);
