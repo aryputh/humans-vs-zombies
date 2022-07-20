@@ -1649,8 +1649,11 @@ Transform:
   - {fileID: 3270424646893280349}
   - {fileID: 3270424646893280299}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 4259130412410085428}
   - {fileID: 43255852515880752}
+=======
+>>>>>>> parent of 029b7af (Added a basic detection circle, doesnt work fully yet)
 =======
 >>>>>>> parent of 029b7af (Added a basic detection circle, doesnt work fully yet)
   m_Father: {fileID: 0}
@@ -2135,6 +2138,7 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &3596188310095628972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,5 +2410,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+=======
+>>>>>>> parent of 029b7af (Added a basic detection circle, doesnt work fully yet)
 =======
 >>>>>>> parent of 029b7af (Added a basic detection circle, doesnt work fully yet)
