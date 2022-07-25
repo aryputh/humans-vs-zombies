@@ -84,16 +84,16 @@ public class PlayerController : MonoBehaviour
                 break;
         }
         
-        float x = Input.GetAxis("Horizontal");
+        //float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if(x != 0 || z != 0)
+        if(/*x != 0 || */z != 0)
         {
             state = 1;
-            Vector3 move = (transform.right * x) + (transform.forward * z);
+            Vector3 move = /*(transform.right * x) + */(transform.forward * z);
             playerController.Move(move * speed * Time.deltaTime);
         }
-        else if(x == 0 && z == 0)
+        else if(/*x == 0 && */z == 0)
         {
             state = 0;
         }

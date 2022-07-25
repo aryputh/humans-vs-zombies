@@ -983,9 +983,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7473e1b16b725e64aa380642b53ccbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
-  followDistance: 15
-  layerMask:
+  movementSpeed: 3
+  wanderRadius: 5
+  followDistance: 10
+  obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 128
   state: 0
@@ -1000,10 +1001,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 180
   m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -2321,16 +2322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038c4ec158834db47b008464131adea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 15
+  radius: 10
   viewAngle: 360
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 1024
   wallMask:
     serializedVersion: 2
     m_Bits: 128
-  visibleTargets: []
-  meshRes: 1
   edgeResolveIterations: 1
   edgeDstThres: 1
   viewMeshFilter: {fileID: 7263599914426843683}

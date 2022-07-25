@@ -7,7 +7,7 @@ public class ZombieManager : MonoBehaviour
 {
     public float movementSpeed;
     public float followDistance;
-    public LayerMask layerMask;
+    public LayerMask obstacleLayerMask;
 
     private NavMeshAgent zombieNav;
     private GameObject zombie;
@@ -111,7 +111,7 @@ public class ZombieManager : MonoBehaviour
         sightDistance = Vector3.Distance(transform.position, player.transform.position);
         if (followDistance >= sightDistance && CanSeePlayer())
         {
-            Debug.Log("moving towards player");
+            //Debug.Log("moving towards player");
             zombieNav.speed = movementSpeed;
             zombieNav.SetDestination(player.transform.position);
             zombie.transform.LookAt(player.transform.position);
@@ -130,12 +130,12 @@ public class ZombieManager : MonoBehaviour
 
         if(!hit)
         {
-            Debug.Log("hit player");
+            //Debug.Log("hit player");
             return true;
         }
         else
         {
-            Debug.Log("not hit player");
+            //Debug.Log("not hit player");
             return false;
         }
     }
