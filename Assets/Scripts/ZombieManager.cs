@@ -23,6 +23,8 @@ public class ZombieManager : MonoBehaviour
     private bool isIdle;
     private bool isJumping;
 
+    private Vector3 wanderTarget;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,8 @@ public class ZombieManager : MonoBehaviour
         isIdle = false;
         isRunning = false;
         isJumping = false;
+
+        wanderTarget = transform.position;
     }
 
     // Update is called once per frame
@@ -119,8 +123,9 @@ public class ZombieManager : MonoBehaviour
         }
         else
         {
-            zombieNav.speed = 0;
-            state = 0;
+            //zombieNav.speed = 0;
+            //state = 0;
+            Wander();
         }
     }
 
@@ -138,5 +143,45 @@ public class ZombieManager : MonoBehaviour
             //Debug.Log("not hit player");
             return false;
         }
+    }
+
+    public void Wander()
+	{
+        zombieNav.SetDestination(wanderTarget);
+
+        zombieNav.speed = movementSpeed * Random.Range(0.75f, 1);
+        state = 1;
+
+        //print("Moving to " + wanderTarget);
+
+        if (Vector3.Distance(transform.position, wanderTarget) < 2.1f || zombieNav.speed == 0)
+		{
+            StartCoroutine(RandomWanderPosition());
+            //print("At wander target.");
+		}
+	}
+
+    public IEnumerator RandomWanderPosition()
+	{
+        //print("Set new wander target at " + wanderTarget);
+
+        zombieNav.speed = 0;
+        state = 0;
+        yield return new WaitForSeconds(2);
+
+        wanderTarget = RandomNavSphere(transform.position, 15);
+    }
+
+    public static Vector3 RandomNavSphere(Vector3 origin, float distance)
+    {
+        Vector3 randomDirection = Random.onUnitSphere * distance;
+
+        randomDirection += origin;
+
+        NavMeshHit navHit;
+
+        NavMesh.SamplePosition(randomDirection, out navHit, distance, -1);
+
+        return navHit.position;
     }
 }
