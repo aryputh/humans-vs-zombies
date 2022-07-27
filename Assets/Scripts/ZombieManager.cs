@@ -123,8 +123,6 @@ public class ZombieManager : MonoBehaviour
         }
         else
         {
-            //zombieNav.speed = 0;
-            //state = 0;
             Wander();
         }
     }
@@ -149,13 +147,16 @@ public class ZombieManager : MonoBehaviour
 	{
         zombieNav.SetDestination(wanderTarget);
 
-        zombieNav.speed = movementSpeed * Random.Range(0.75f, 1);
+        zombieNav.speed = movementSpeed * 0.8f;
         state = 1;
 
         //print("Moving to " + wanderTarget);
 
         if (Vector3.Distance(transform.position, wanderTarget) < 2.1f || zombieNav.speed == 0)
 		{
+            zombieNav.speed = 0;
+            state = 0;
+
             StartCoroutine(RandomWanderPosition());
             //print("At wander target.");
 		}
@@ -165,9 +166,7 @@ public class ZombieManager : MonoBehaviour
 	{
         //print("Set new wander target at " + wanderTarget);
 
-        zombieNav.speed = 0;
-        state = 0;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(Random.Range(1, 3));
 
         wanderTarget = RandomNavSphere(transform.position, 15);
     }
