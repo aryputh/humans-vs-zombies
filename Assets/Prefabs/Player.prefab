@@ -1993,7 +1993,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.7
-  m_Height: 3.7406461
+  m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!143 &6523321370095362085
@@ -2029,6 +2029,7 @@ MonoBehaviour:
   playerController: {fileID: 6523321370095362085}
   speed: 7
   anim: {fileID: 4851177068152835122}
+  diePanel: {fileID: 0}
   state: 0
 --- !u!1 &4851177068145426420
 GameObject:

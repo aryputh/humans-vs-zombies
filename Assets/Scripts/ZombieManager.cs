@@ -13,6 +13,7 @@ public class ZombieManager : MonoBehaviour
     private GameObject zombie;
     private GameObject player;
     private float sightDistance;
+    private Rigidbody rb;
 
     [Tooltip("0 = idle, 1 = run, 2 = jump")]
     public int state;
@@ -37,6 +38,8 @@ public class ZombieManager : MonoBehaviour
 
         //Sets a destination for the zombie to go to, in this case, a  player.
         zombieNav.SetDestination(player.transform.position);
+
+        rb = GetComponent<Rigidbody>();
 
         //Rotates to face the player.
         zombie.transform.LookAt(player.transform.position);
@@ -118,7 +121,12 @@ public class ZombieManager : MonoBehaviour
             //Debug.Log("moving towards player");
             zombieNav.speed = movementSpeed;
             zombieNav.SetDestination(player.transform.position);
-            zombie.transform.LookAt(player.transform.position);
+            
+            if(rb.velocity.y == 0)
+			{
+                zombie.transform.LookAt(player.transform.position);
+            }
+
             state = 1;
         }
         else
@@ -182,5 +190,26 @@ public class ZombieManager : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out navHit, distance, -1);
 
         return navHit.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Hole"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+	private void OnTriggerEnter(Collider other)
+	{
+        if (other.gameObject.CompareTag("Hole"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Score"))
+        {
+            player.GetComponent<PlayerController>().score++;
+        }
     }
 }

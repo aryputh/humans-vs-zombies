@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public CharacterController playerController;
     public float speed;
     public Animator anim;
+    public GameObject diePanel;
+    public TMP_Text scoreText;
 
     [Tooltip("0 = idle, 1 = run, 2 = jump")]
     public int state;
@@ -15,11 +18,17 @@ public class PlayerController : MonoBehaviour
     private bool isIdle;
     private bool isJumping;
 
+    [HideInInspector]
+    public int score;
+
     void Start()
     {
         isIdle = false;
         isRunning = false;
         isJumping = false;
+
+        score = 0;
+        scoreText.text = "Score: " + score;
     }
 
     void Update()
@@ -97,5 +106,19 @@ public class PlayerController : MonoBehaviour
         {
             state = 0;
         }
+
+        scoreText.text = "Score: " + score;
     }
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.CompareTag("Hole") || collision.gameObject.CompareTag("Zombie"))
+		{
+            print("You died!");
+            diePanel.SetActive(true);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+	}
 }
